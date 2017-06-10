@@ -1,0 +1,85 @@
+Team 1-F:
+  deradaam
+  derrowap
+  finngw
+
+Instructions for building OS:
+  In the m4 directory:
+    % make
+
+  This will build everything from scratch and load everything into
+  the floppya.img. It loads shell, tstpr2, tstprg, and messages.txt into
+  floppya.img.
+
+Instructions for testing and using the OS:
+  In the m4 directory:
+    % make bochs
+
+  This should open up bochs and present you with a prompt as below:
+    1F:>
+
+  For any file stored in the directory, you can delete it by doing
+    1F:> delete messag
+  Then if you try to print the contents out...
+    1F:> type messag
+    File not found
+  This is because the file name is not being tracked anymore.
+
+  For any existing file in the directory, you can copy the contents over
+  to a new file by doing
+    1F:> copy messag cool
+  Where 'messag' is the existing file in the directory and 'cool' is the
+  new file name it will be copied into.
+  Then you can print the contents as normal by doing...
+    1F:> type cool
+  This will now be equivalent to printing the contents of messag.
+
+  If you want to see all of the files stored in the directory, with
+  the corresponding number of sectors used, type...
+    1F:> dir
+    KERNEL 10
+    shell 6
+    tstpr2 1
+    tstprg 1
+    messag 1
+    1F:> 
+
+  You can create your new files in the directory by typing...
+    1F:> create file
+    It will allow you to enter this text.
+    And when you press enter with an empty line
+    it will stop asking for input and save
+    your new file!
+
+    1F:> type file
+    It will allow you to enter this text.
+    And when you press enter with an empty line
+    it will stop asking for input and save
+    your new file!
+
+    1F:> dir
+    KERNEL 10
+    shell 6
+    tstpr2 1
+    tstprg 1
+    messag 1
+    file 1
+    1F:> 
+
+
+
+  If a bad command is entered, it will print an error message:
+    1F:> rm -rf .
+    Bad command!
+    1F:>
+
+Any bugs or deficiencies:
+  None currently.
+
+Additional features you implemented:
+  The 'dir' command also prints out the size of the file represented as the
+  number of sectors. Also, our shell handles silly users that don't know the
+  max file name is 6 characters long. So if you type
+    1F:> copy message.txt newFile.txt
+  Then it will find the file 'messag' and copy it into a new file
+  named 'newFil'. This is supported for all of our commands.

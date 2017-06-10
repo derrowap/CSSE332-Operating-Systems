@@ -1,0 +1,19 @@
+Team 1-F:
+  deradaam
+  derrowap
+  finngw
+
+Instructions for building OS:
+  In the m1 directory:
+  % make
+
+Instructions for testing and using the OS:
+  % bochs -f opsys.bxrc
+  Then type 6 to start the simulation to see the result.
+  In this milestone, "Hello World" is printed at the top left corner.
+
+Any bugs or deficiencies:
+  None currently.
+
+Additional features you implemented:
+  None.

@@ -1,0 +1,29 @@
+Team 1-F:
+  deradaam
+  derrowap
+  finngw
+
+Instructions for building OS:
+  In the m2 directory:
+  % make
+
+Instructions for testing and using the OS:
+  In the m2 directory:
+  % make bochs
+
+  In this milestone, "Hello World" is printed,
+  then the error message from the 0x21 interrupt handler is printed,
+  then using the 0x21 interrupt, reads and prints the message.txt,
+  then using the 0x21 interrupt, reads input from screen and prints it.
+
+Any bugs or deficiencies:
+  None currently.
+
+Additional features you implemented:
+  I feel like the functionality of backspaces in readString() is properly
+  handled how it should be but wasn't explicity told to be like it is. If
+  the backspace key is pressed when there are no more characters to remove,
+  it will not print out the backspaces nor try to remove the last character
+  from the buffer (since it is at the beginning of the buffer in this case).
+
+  Other than that, just kept really clean and efficient code.

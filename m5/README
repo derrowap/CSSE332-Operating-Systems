@@ -1,0 +1,78 @@
+Team 1-F:
+  deradaam
+  derrowap
+  finngw
+
+Instructions for building OS:
+  In the m5 directory:
+    % make
+
+  This will build everything from scratch and load everything into
+  the floppya.img. It loads shell, tstpr2, tstprg, messages.txt, phello,
+  help1.txt, help2.txt, and help3.txt into floppya.img.
+
+Instructions for testing and using the OS:
+  In the m4 directory:
+    % make bochs
+
+  This should open up bochs and present you with a prompt as below:
+    1F:>
+
+  To kill a program, enter
+  "kill <process id>"
+  This will terminate the process at position <process id> 
+  within the process table.
+
+  For any executable file in your directory, you can temporarily pause
+  the shell and execute said file by entering:
+  "execforeground <filename>"
+  NOTE: Instead of making a new 0x21 interrupt to support waiting, we
+  added the parameter "int wait_pid" to our "executeProgram" method.
+  If this parameter equals -1, then the function executes as normal and no
+  waiting occurs. If this parameter is a valid process id in our process
+  table, then the corresponding process for wait_pid will wait for this
+  new program that just began executing.
+
+Any bugs or deficiencies:
+  None currently.
+
+Additional features you implemented:
+  The 'dir' command also prints out the size of the file represented as the
+  number of sectors. Also, our shell handles silly users that don't know the
+  max file name is 6 characters long. So if you type
+    1F:> copy message.txt newFile.txt
+  Then it will find the file 'messag' and copy it into a new file
+  named 'newFil'. This is supported for all of our commands.
+
+  To see a list of all processes, enter:
+    1F:> ps
+  A table of all processes represented by their process id, current
+  active status, and wait status will then be printed.
+
+  To see a list of all our commands, you can enter
+    1F:> help [1-3]
+  and that page will print out helpful information about commands you
+  can run with our operating system. For example, type
+    1F:> help 1
+
+  To make a process running at index i wait on a process at index j, run:
+    1F:> wait i j
+  To test this feature, we included a program "infinite" which just immediately
+  enters an infinite loop. Do the following:
+    1F:> execute infinite
+    1F:> ps
+  This will show that the "infinite" program is actively being executed at
+  index 1 in the process table. Continue with:
+    1F:> wait 1 0
+    1F:> ps
+  This will now show you that the "infinite" process at index 1 is waiting on
+  the "shell" process at index 0. You can change what the process is waiting
+  on by doing the following:
+    1F:> execute infinite
+    1F:> ps
+  Which will show you a new instance of the "infinite" program being actively
+  executed at index 2. Then you can override the previous waiting by doing:
+    1F:> wait 1 2
+    1F:> ps
+  Which will show you that the "infinite" process at index 1 is now waiting
+  on the "infinite" process at index 2.

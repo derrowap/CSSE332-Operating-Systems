@@ -1,0 +1,21 @@
+
+			        Welcome to the Magic Shell!
+------------------------PAGE 3--------------------------
+
+To see some magic, try out some of the following commands in the shell:
+
+  For any executable file in your directory, you can temporarily pause
+  the shell and execute said file by entering:
+  "execforeground <filename>"
+
+  To see a list of all files stored in the directory, with
+  the corresponding number of sectors used, enter
+  "dir"
+
+  To make a process running at index i wait on a process at index j, run:
+  "wait <i> <j>"
+
+  If a bad command is entered, it will print an error message:
+  1F:> rm -rf .
+  Bad command!
+

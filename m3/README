@@ -1,0 +1,45 @@
+Team 1-F:
+  deradaam
+  derrowap
+  finngw
+
+Instructions for building OS:
+  In the m3 directory:
+    % make
+
+  This will build everything from scratch and load everything into
+  the floppya.img. It loads shell, tstpr2, tstprg, and messages.txt into
+  floppya.img.
+
+Instructions for testing and using the OS:
+  In the m3 directory:
+    % make bochs
+
+  This should open up bochs and present you with a prompt as below:
+    1F:>
+
+  Since messages.txt is stored with an entry in the directory, if you type
+    1F:> type messag
+    If this message prints out, then your readSector function is working correctly!
+    1F:>
+  It will load the content of that file and print if for you.
+
+  Since tstpr2 is stored with an entry in the directory, you can load
+  and execute the program using the "execute" command. Below is what you
+  should see:
+    1F:> execute tstpr2
+    If you see this message, tstpr2 is running correctly!
+    1F:>
+  Notice that this overwrites where the shell is stored and when tstpr2
+  calles the terminate interrupt, the shell will be restarted.
+
+  If a bad command is entered, it will print an error message:
+    1F:> rm -rf .
+    Bad command!
+    1F:>
+
+Any bugs or deficiencies:
+  None currently.
+
+Additional features you implemented:
+  None for this milestone.

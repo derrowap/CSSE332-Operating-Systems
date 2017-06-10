@@ -1,0 +1,19 @@
+
+              Welcome to the Magic Shell!
+------------------------PAGE 2--------------------------
+
+To see some magic, try out some of the following commands in the shell:
+
+  For any executable file in your directory, you can run them by entering
+  "execute <filename>"
+
+  To see a list of all processes, enter
+  "ps"
+  A table of all processes represented by their process id, current
+  active status, and wait status will then be printed.
+
+  To kill a program, enter
+  "kill <process id>"
+  This will terminate the process at position <process id> 
+  within the process table
+

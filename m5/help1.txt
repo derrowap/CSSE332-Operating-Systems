@@ -1,0 +1,21 @@
+
+              Welcome to the Magic Shell!
+------------------------PAGE 1--------------------------
+
+To see some magic, try out some of the following commands in the shell:
+
+  For any text file in your directory, you can print the contents by entering
+  "type <filename>"
+  
+  You can magically create your new files in the directory by entering
+  "create <filename>".
+  You will then be prompted to enter the magical text for the file.
+
+  For any file stored in the directory, you can delete it by entering
+  "delete <filename>"
+  Then poof! Its gone!
+
+  For any existing file in the directory, you can copy the contents over
+  to a new file by entering
+  "copy <source filename> <destination filename>"
+
