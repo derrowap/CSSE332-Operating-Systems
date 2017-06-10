@@ -4,7 +4,7 @@ Final Project implementation of an operating system for CSSE332 at Rose-Hulman I
 Individual README files can be found within each milestone directory providing a summary of the work accomplished for each.
 
 YouTube Presentation (click image):<br>
-[![CSSE 332: Operating Systems Final Project](http://img.youtube.com/vi/FUcKRhdHnDw/0.jpg)](https://www.youtube.com/watch?v=FUcKRhdHnDw&feature=youtu.be "CSSE 332: Operating Systems Final Project")
+[![CSSE 332: Operating Systems Final Project](http://img.youtube.com/vi/FUcKRhdHnDw/0.jpg)](https://youtu.be/FUcKRhdHnDw "CSSE 332: Operating Systems Final Project")
 
 This is a 16-bit bare metal operating system built from scratch. The main components consist of:
   * A boot loader to boot from a floppy disk image
